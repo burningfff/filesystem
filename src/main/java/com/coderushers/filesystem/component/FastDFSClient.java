@@ -33,9 +33,9 @@ public class FastDFSClient {
         try {
             storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), FilenameUtils.getExtension(file.getOriginalFilename()), null);
         }catch (Exception e){
-            return ReturnUtil.err("上传照片失败");
+            return ReturnUtil.err("上传照片失败"+e.getMessage());
         }
-        return ReturnUtil.ok("/"+storePath.getFullPath());
+        return ReturnUtil.ok("106.14.137.163:4396/"+storePath.getFullPath());
     }
 
     /**
